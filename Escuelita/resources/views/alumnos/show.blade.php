@@ -18,7 +18,7 @@
                 <h3 class="card-title text-center">{{ $alumno->nombre }}</h3>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Correo:</strong> {{ $alumno->correo }}</li>
-                    <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> {{ \Carbon\Carbon::parse($alumno->fecha_nacimiento)->format('d/m/Y') }}</li>
+                    <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> {{ $alumno->fecha_nacimiento}}</li>
                     <li class="list-group-item"><strong>Ciudad:</strong> {{ $alumno->ciudad }}</li>
                 </ul>
             </div>
@@ -38,3 +38,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
