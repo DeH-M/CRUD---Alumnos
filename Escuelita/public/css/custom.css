@@ -1,0 +1,25 @@
+body {
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+table th, table td {
+    text-align: center;
+}
+
+form label {
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse; /* Asegura que los bordes no se dupliquen */
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black; /* Asegura que todas las celdas tengan bordes */
+    padding: 8px;
+}
