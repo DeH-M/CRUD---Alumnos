@@ -4,13 +4,14 @@ namespace Tests\Feature;
 
 use App\Models\Alumno;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class AlumnoControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */ 
+    #[Test]
     public function muestra_listado_alumnos(): void
     {
         Alumno::factory()->count(2)->create();
@@ -22,7 +23,7 @@ class AlumnoControllerTest extends TestCase
                  ->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function muestra_formulario_crear_alumno(): void
     {
         $response = $this->get('/alumnos/create');
@@ -32,7 +33,7 @@ class AlumnoControllerTest extends TestCase
                  ->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function muestra_formulario_editar_alumno(): void
     {
         $alumno = Alumno::factory()->create();
@@ -47,7 +48,7 @@ class AlumnoControllerTest extends TestCase
                  ->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function muestra_detalle_de_un_alumno(): void
     {
         $alumno = Alumno::factory()->create();
@@ -61,7 +62,7 @@ class AlumnoControllerTest extends TestCase
                  ->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function crear_nuevo_alumno(): void
     {
         $alumno = Alumno::factory()->make();
@@ -72,7 +73,7 @@ class AlumnoControllerTest extends TestCase
         $response->assertRedirect('/alumnos');
     }
 
-    /** @test */
+    #[Test]
     public function editar_un_alumno(): void
     {
         $alumno = Alumno::factory()->create();
@@ -90,7 +91,7 @@ class AlumnoControllerTest extends TestCase
         $response->assertRedirect('/alumnos');
     }
 
-    /** @test */
+    #[Test]
     public function eliminar_un_alumno(): void
     {
         $alumno = Alumno::factory()->create();
